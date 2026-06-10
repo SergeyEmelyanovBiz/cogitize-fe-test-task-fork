@@ -14,6 +14,10 @@ const INTER = Inter({
   subsets: ["cyrillic-ext", "latin-ext"],
 });
 
+export const metadata = {
+  icons: { icon: "/images/favicon.ico" },
+};
+
 //fake
 
 export function generateStaticParams() {
