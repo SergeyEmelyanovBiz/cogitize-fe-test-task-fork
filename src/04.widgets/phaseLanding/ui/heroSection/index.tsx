@@ -18,7 +18,7 @@ export const HeroSection = () => {
             src="/images/phase/smiley.svg"
             alt=""
             aria-hidden
-            className="absolute -left-4 top-[3%] z-10 w-20 sm:-left-12 sm:w-28"
+            className="absolute -left-1 top-[3%] z-10 w-20 sm:left-6 sm:w-28"
             initial={{ opacity: 0, rotate: -12, scale: 0.6 }}
             animate={{ opacity: 1, rotate: 0, scale: 1 }}
             transition={{ delay: 0.5, type: "spring", stiffness: 260 }}
@@ -26,7 +26,7 @@ export const HeroSection = () => {
 
           {/* "Independent minds only" badge on a brush stroke (from Figma) */}
           <motion.span
-            className="absolute -top-5 right-2 z-10 inline-flex items-center justify-center px-6 py-1.5 sm:right-10"
+            className="absolute -top-9 right-2 z-10 inline-flex items-center justify-center px-6 py-1.5 sm:right-10"
             initial={{ opacity: 0, y: -10, scale: 0.8 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ delay: 0.65, type: "spring", stiffness: 280 }}
