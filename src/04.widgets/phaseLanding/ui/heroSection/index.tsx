@@ -11,14 +11,14 @@ export const HeroSection = () => {
       className="relative flex min-h-screen flex-col bg-[#FEFEFE]"
     >
       <div className="flex flex-1 flex-col items-center justify-center px-6 pt-28 pb-10">
-        <div className="relative w-full max-w-5xl">
+        <div className="relative w-full max-w-6xl">
           {/* purple hand-drawn smiley (from Figma) */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <motion.img
             src="/images/phase/smiley.svg"
             alt=""
             aria-hidden
-            className="absolute -left-3 top-1/4 z-10 w-16 sm:-left-8 sm:w-24"
+            className="absolute -left-4 top-[3%] z-10 w-20 sm:-left-12 sm:w-28"
             initial={{ opacity: 0, rotate: -12, scale: 0.6 }}
             animate={{ opacity: 1, rotate: 0, scale: 1 }}
             transition={{ delay: 0.5, type: "spring", stiffness: 260 }}
