@@ -18,7 +18,7 @@ export const HeroSection = () => {
             src="/images/phase/smiley.svg"
             alt=""
             aria-hidden
-            className="absolute -left-1 top-[3%] z-10 w-20 sm:left-6 sm:w-28"
+            className="absolute -left-1 top-[3%] z-10 w-20 sm:left-1 sm:w-28"
             initial={{ opacity: 0, rotate: -12, scale: 0.6 }}
             animate={{ opacity: 1, rotate: 0, scale: 1 }}
             transition={{ delay: 0.5, type: "spring", stiffness: 260 }}
