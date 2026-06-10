@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CornerDownLeft } from "lucide-react";
+import { CornerDownRight } from "lucide-react";
 import { Marquee } from "../marquee";
 
 export const HeroSection = () => {
@@ -69,7 +69,7 @@ export const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.45, duration: 0.5 }}
         >
-          <CornerDownLeft className="size-5" />
+          <CornerDownRight className="size-5" />
           Create you Phase
         </motion.button>
       </div>

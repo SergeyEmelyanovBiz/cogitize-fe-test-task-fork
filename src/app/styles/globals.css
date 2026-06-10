@@ -56,3 +56,13 @@
 :root {
   /* for variables  not use tailwind classes */
 }
+
+@layer base {
+  button:not(:disabled),
+  [role="button"],
+  a[href],
+  summary,
+  label[for] {
+    cursor: pointer;
+  }
+}

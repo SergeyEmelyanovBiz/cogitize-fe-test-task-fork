@@ -8,7 +8,6 @@ import { classes } from "@/07.shared/lib";
 const NAV_ITEMS = [
   { href: "/design", key: "design" },
   { href: "/swap", key: "swap" },
-  { href: "/guide", key: "guide" },
 ] as const;
 
 export const Header = () => {
@@ -41,8 +40,9 @@ export const Header = () => {
 
   if (compact) {
     return (
-      <div className="fixed bottom-4 right-4 z-50 flex items-center gap-1 rounded-full border border-white/10 bg-slate-900/85 p-1 shadow-lg backdrop-blur">
+      <div className="fixed left-3 top-1/2 z-50 flex -translate-y-1/2 flex-col items-stretch gap-1 rounded-2xl border border-white/10 bg-slate-900/85 p-1.5 shadow-lg backdrop-blur">
         {links}
+        <div className="my-0.5 h-px bg-white/10" />
         <LocaleSwitcher />
       </div>
     );
