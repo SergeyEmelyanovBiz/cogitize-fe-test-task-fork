@@ -6,8 +6,8 @@ import { LocaleSwitcher } from "@/05.features";
 import { classes } from "@/07.shared/lib";
 
 const NAV_ITEMS = [
-  { href: "/swap", key: "swap" },
   { href: "/design", key: "design" },
+  { href: "/swap", key: "swap" },
   { href: "/guide", key: "guide" },
 ] as const;
 

@@ -10,8 +10,8 @@ const config = () => {
       return [
         {
           source: "/",
-          destination: "/guide",
-          permanent: true,
+          destination: "/design",
+          permanent: false,
         },
       ];
     },
