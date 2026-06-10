@@ -1,6 +1,6 @@
 # Crypto Swap Widget — Front-End Test Task
 
-Live demo: **<вставь сюда свою Vercel-ссылку>**
+Live demo: **[cogitize-fe-test-task-fork.vercel.app](https://cogitize-fe-test-task-fork.vercel.app)**
 
 > Original task description: see [`TASK.md`](./TASK.md).
 
@@ -19,8 +19,8 @@ Routes:
 
 | Route | Description |
 | ----- | ----------- |
-| `/en/swap`, `/uk/swap` | Task 1 — crypto swap widget |
-| `/en/design`, `/uk/design` | Task 2 — animated page |
+| [/en/swap](https://cogitize-fe-test-task-fork.vercel.app/en/swap) · [/uk/swap](https://cogitize-fe-test-task-fork.vercel.app/uk/swap) | Task 1 — crypto swap widget |
+| [/en/design](https://cogitize-fe-test-task-fork.vercel.app/en/design) · [/uk/design](https://cogitize-fe-test-task-fork.vercel.app/uk/design) | Task 2 — animated page |
 
 Scripts: `npm run build`, `npm start`, `npm test`, `npm run lint`.
 
