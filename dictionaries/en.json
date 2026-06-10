@@ -2,7 +2,8 @@
   "nav": {
     "swap": "Swap",
     "design": "Design",
-    "guide": "Guide"
+    "guide": "Guide",
+    "replay": "Replay"
   },
   "swap": {
     "convert": "Convert",

@@ -38,7 +38,7 @@ export const HeroSection = () => {
               aria-hidden
               className="absolute inset-0 h-full w-full"
             />
-            <span className="relative text-sm font-medium text-white sm:text-base">
+            <span className="relative text-xl font-medium text-white">
               Independent minds only
             </span>
           </motion.span>

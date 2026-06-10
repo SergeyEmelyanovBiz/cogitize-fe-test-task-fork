@@ -19,11 +19,11 @@ const Row = () => (
       <div key={index} className="flex items-center">
         <Divider />
         {item === "100%" ? (
-          <span className="rounded-md border border-dashed border-[#BF57F3] px-2.5 py-1 text-sm font-semibold uppercase tracking-wide text-[#BF57F3]">
+          <span className="rounded-md border border-dashed border-[#BF57F3] px-2.5 py-1 text-sm font-medium uppercase tracking-wide text-[#BF57F3]">
             100%
           </span>
         ) : (
-          <span className="text-sm font-semibold uppercase tracking-wide text-[#BF57F3]">
+          <span className="text-sm font-medium uppercase tracking-wide text-[#BF57F3]">
             {item}
           </span>
         )}

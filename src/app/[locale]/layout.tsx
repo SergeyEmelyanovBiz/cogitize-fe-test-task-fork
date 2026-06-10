@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { Toaster } from "sonner";
 import { Header } from "@/04.widgets";
 import { AppLayout } from "../layouts";
-import { ReduxProvider, ThemeProvider } from "../providers";
+import { ReduxProvider, ReplayBoundary, ThemeProvider } from "../providers";
 import "../styles/globals.css";
 
 const INTER = Inter({
@@ -50,7 +50,9 @@ const RootLayout = async ({
               disableTransitionOnChange
             >
               <Header />
-              <AppLayout>{children}</AppLayout>
+              <AppLayout>
+                <ReplayBoundary>{children}</ReplayBoundary>
+              </AppLayout>
             </ThemeProvider>
             <Toaster />
           </ReduxProvider>
