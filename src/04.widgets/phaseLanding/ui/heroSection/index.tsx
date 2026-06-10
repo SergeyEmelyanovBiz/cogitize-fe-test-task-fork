@@ -12,35 +12,38 @@ export const HeroSection = () => {
     >
       <div className="flex flex-1 flex-col items-center justify-center px-6 pt-28 pb-10">
         <div className="relative w-full max-w-5xl">
-          {/* purple hand-drawn smiley */}
-          <motion.svg
-            viewBox="0 0 90 56"
-            className="absolute -left-2 top-2 z-10 w-16 sm:-left-6 sm:w-24"
+          {/* purple hand-drawn smiley (from Figma) */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <motion.img
+            src="/images/phase/smiley.svg"
+            alt=""
+            aria-hidden
+            className="absolute -left-3 top-1/4 z-10 w-16 sm:-left-8 sm:w-24"
             initial={{ opacity: 0, rotate: -12, scale: 0.6 }}
             animate={{ opacity: 1, rotate: 0, scale: 1 }}
             transition={{ delay: 0.5, type: "spring", stiffness: 260 }}
-          >
-            <path
-              d="M6 22 Q 45 60 84 20"
-              stroke="#BF57F3"
-              strokeWidth="7"
-              fill="none"
-              strokeLinecap="round"
-            />
-            <circle cx="34" cy="10" r="4.5" fill="#BF57F3" />
-            <circle cx="56" cy="8" r="4.5" fill="#BF57F3" />
-          </motion.svg>
+          />
 
-          {/* "Independent minds only" badge */}
+          {/* "Independent minds only" badge on a brush stroke (from Figma) */}
           <motion.span
-            className="absolute -top-6 right-2 z-10 rounded-full bg-[#BF57F3] px-4 py-1.5 text-sm font-semibold text-white sm:right-8"
+            className="absolute -top-5 right-2 z-10 inline-flex items-center justify-center px-6 py-1.5 sm:right-10"
             initial={{ opacity: 0, y: -10, scale: 0.8 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ delay: 0.65, type: "spring", stiffness: 280 }}
           >
-            Independent minds only
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/phase/badge-bg.svg"
+              alt=""
+              aria-hidden
+              className="absolute inset-0 h-full w-full"
+            />
+            <span className="relative text-sm font-medium text-white sm:text-base">
+              Independent minds only
+            </span>
           </motion.span>
 
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <motion.img
             src="/images/phase/phase-logo.png"
             alt="PHASE"
@@ -54,7 +57,7 @@ export const HeroSection = () => {
         </div>
 
         <motion.p
-          className="mt-10 text-center text-xl font-medium text-[#181818] sm:text-2xl"
+          className="mt-10 text-center text-xl font-medium text-[#181818]"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}
@@ -64,7 +67,7 @@ export const HeroSection = () => {
 
         <motion.button
           type="button"
-          className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#FFD000] px-6 py-3.5 text-base font-semibold text-[#181818] transition-transform hover:scale-[1.03]"
+          className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#FFD000] px-6 py-3.5 text-base font-medium text-[#050505] transition-transform hover:scale-[1.03]"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.45, duration: 0.5 }}

@@ -20,7 +20,7 @@ export const PhaseHeader = () => {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
         <a
           href="#home"
-          className="rounded-lg bg-black/[0.04] px-3 py-1.5 text-lg font-extrabold tracking-tight text-[#181818]"
+          className="rounded-lg bg-black/[0.04] px-3 py-1.5 text-xl font-bold tracking-tight text-black"
         >
           PHASE
         </a>
@@ -39,7 +39,7 @@ export const PhaseHeader = () => {
 
         <button
           type="button"
-          className="hidden rounded-lg border border-[#181818] px-5 py-2 text-sm font-semibold text-[#181818] transition-colors hover:bg-[#181818] hover:text-white md:block"
+          className="hidden rounded-lg border border-[#181818] px-5 py-2 text-base font-medium text-[#050505] transition-colors hover:bg-[#181818] hover:text-white md:block"
         >
           Log in
         </button>
