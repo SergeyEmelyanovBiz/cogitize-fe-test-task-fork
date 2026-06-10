@@ -1,1 +1,26 @@
-{}
+{
+  "swap": {
+    "convert": "Convert",
+    "title": "Select cryptocurrency",
+    "youSend": "You send",
+    "youReceive": "You receive",
+    "searchCoins": "Search coins",
+    "noResults": "No coins found",
+    "swap": "Swap",
+    "confirm": "Confirm",
+    "ok": "OK",
+    "successMessage": "You successfully swapped {give} → {receive}"
+  },
+  "design": {
+    "badge": "Framer Motion",
+    "heroTitle": "Bring the interface to life",
+    "heroSubtitle": "Smooth, purposeful motion across every section.",
+    "section1Title": "Reveal on scroll",
+    "section1Text": "Blocks fade and rise into place as they enter the viewport.",
+    "section2Title": "Interactive cards",
+    "section2Text": "Hover and tap feedback that feels responsive and alive.",
+    "section3Title": "Featured animation",
+    "section3Text": "The highlighted block loops a continuous, eye-catching motion.",
+    "cta": "Explore the swap widget"
+  }
+}

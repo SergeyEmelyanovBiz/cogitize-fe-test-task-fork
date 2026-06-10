@@ -1,1 +1,2 @@
-export { useAppDispatch } from "./useAppDispatch";
+export { useAppDispatch, useAppSelector } from "./useAppDispatch";
+export { useThrottledValue } from "./useThrottledValue";

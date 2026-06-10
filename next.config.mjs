@@ -15,6 +15,18 @@ const config = () => {
         },
       ];
     },
+    rewrites: async () => {
+      return [
+        {
+          source: "/proxy/assets/:path*",
+          destination: "https://api.miex.one/api/v1/public/:path*",
+        },
+        {
+          source: "/proxy/swap/:path*",
+          destination: "https://devgateway.miex.one/api/swap/public/:path*",
+        },
+      ];
+    },
     env: {},
     reactStrictMode: false,
     images: {

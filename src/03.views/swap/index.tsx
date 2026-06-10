@@ -1,5 +1,7 @@
+import { SwapWidget } from "@/04.widgets";
+
 const SwapView = () => {
-  return <></>;
+  return <SwapWidget />;
 };
 
 export default SwapView;

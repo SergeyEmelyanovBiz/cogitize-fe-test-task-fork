@@ -1,210 +1,49 @@
-# Тестове завдання — Front-End Developer
+# Crypto Swap Widget — Front-End Test Task
 
----
+Live demo: **<вставь сюда свою Vercel-ссылку>**
 
-## Запуск проєкту
+> Original task description: see [`TASK.md`](./TASK.md).
+
+## Stack
+
+Next.js 16 (App Router) · React 19 · Redux Toolkit + RTK Query · Framer Motion · next-intl · Tailwind CSS v4 · TypeScript. Architecture: **Feature-Sliced Design**.
+
+## Run locally
 
 ```bash
 npm install
-npm run dev
+npm run dev      # http://localhost:3000  (root redirects to /guide)
 ```
 
-Відкрийте [http://localhost:3000](http://localhost:3000) у браузері.
+Routes:
 
----
+| Route | Description |
+| ----- | ----------- |
+| `/en/swap`, `/uk/swap` | Task 1 — crypto swap widget |
+| `/en/design`, `/uk/design` | Task 2 — animated page |
 
-## Sitemap
+Scripts: `npm run build`, `npm start`, `npm test`, `npm run lint`.
 
-| Маршрут                                   | Опис                                          |
-| ----------------------------------------- | --------------------------------------------- |
-| [`/guide`](http://localhost:3000/guide)   | Сторінка з технічним завданням (цей документ) |
-| [`/swap`](http://localhost:3000/swap)     | Завдання 1 — віджет обміну криптовалют        |
-| [`/design`](http://localhost:3000/design) | Завдання 2 — анімований верстка               |
+## Task 1 — Swap widget
 
----
+- Token dropdown with **infinite scroll**, built on RTK Query `infiniteQuery` + `IntersectionObserver`.
+- Default pair **USDT → BTC**; the search box filters via the same endpoint (changing the query restarts paging from page 1).
+- **Two-way amount calculation**: editing either field recalculates the other; the preview request is **throttled to ≤ 1 request / 600 ms**.
+- **Swap** button swaps the tokens (not the amounts) and recomputes; selecting a token resets both inputs.
+- Confirm button is **disabled until a successful preview**; on click a success modal appears; **OK** resets the form.
+- Framer Motion animations, `en` / `uk` localization, strict typing (no `any`).
 
-## Передумови
+## Task 2 — Animated page
 
-Проєкт побудований на **FSD (Feature-Sliced Design)** з наступними технологіями:
+Hero + three sections with scroll-reveal and interactive cards, plus one featured block with a continuous looping animation (Framer Motion).
 
-| Технологія                | Версія          |
-| ------------------------- | --------------- |
-| Next.js                   | 16 (App Router) |
-| React                     | 19              |
-| Redux Toolkit + RTK Query | ^2              |
-| Framer Motion             | ^11             |
-| next-intl                 | ^4              |
-| Tailwind CSS              | ^4              |
-| TypeScript                | ^5              |
+## Notes & decisions
 
-Ознайомтесь зі структурою шарів FSD перед початком:
+- **CORS / proxy.** The assets host (`api.miex.one`) does not return an `Access-Control-Allow-Origin` header, so a direct browser call is blocked. Both APIs are therefore proxied same-origin through `next.config` rewrites under `/proxy/*` (server-to-server). This is why the app needs a server runtime (e.g. Vercel) rather than static hosting.
+- **Two-way binding without effects.** The edited field holds the raw input; the opposite field is *derived* from the preview response — no second state, no `setState` inside an effect.
+- **FSD.** Business logic lives in `model/` hooks, UI stays presentational; slices expose a public API via `index.ts`.
+- **Tests.** `npm test` covers the throttle hook and the asset row.
 
-```
-src/
-  02.processes/   ← процеси (ініціалізація застосунку)
-  03.views/       ← сторінки (page-level компоненти)
-  04.widgets/     ← самодостатні блоки UI
-  05.features/    ← юзер-флоу, взаємодії
-  06.entities/    ← бізнес-сутності
-  07.shared/      ← перевикористовуваний код (ui, lib, hooks, utils)
-```
+## Deploy
 
-Кожен шар (крім `shared` та `views`) може містити **сегменти**:
-
-```
-05.features/
-  swap-form/
-    api/          ← RTK Query endpoints
-    model/        ← бізнес-логіка
-      hooks/      ← useSwapForm, useTokenSelect, ...
-      context/    ← React Context (якщо потрібен)
-    ui/           ← компоненти фічі
-    index.ts      ← публічне API фічі (тільки те, що треба зовні)
-```
-
-> Правило: **імпортувати можна лише через `index.ts`**. Прямі імпорти з внутрішніх файлів сегмента заборонені.
-
----
-
-## Завдання 1 — Віджет обміну криптовалют (Swap Widget)
-
-### Дизайн
-
-> 🎨 **Figma — Swap Widget:** `https://www.figma.com/design/gsORiIKuNNp0mF9XvREqKR/Test_task_frontend-developer?node-id=1-2598&t=fCwZh4Cy8oEKG79J-0`
-
-Реалізуйте повноцінний віджет обміну криптовалют за дизайном.
-
----
-
-### API
-
-Список токенів (з пагінацією)
-
-```
-GET https://api.miex.one/api/v1/public/assets?search=BTC&page=1
-```
-
-**Response:**
-
-```ts
-{
-  currentPage: number;
-  data: {
-    id: number;
-    symbol: string;
-    name: string;
-    assetImage: string;
-  }
-  [];
-  hasNextPage: boolean;
-  maximumPages: number;
-}
-```
-
-Розрахунок курсу обміну
-
-```
-POST https://devgateway.miex.one/api/swap/public/preview
-```
-
-**Payload:**
-
-```ts
-{
-  fromAssetId: number;
-  toAssetId: number;
-  direction: "from" | "to";
-  amount: string;
-  balanceType: ["main", "trade"];
-}
-```
-
-**Response:**
-
-```ts
-{
-  estimatedGive: string;
-  estimatedReceive: string;
-  estimatedRate: string;
-  estimatedUsdtEquivalent: string;
-}
-```
-
----
-
-### Функціональні вимоги
-
-**Вибір токенів:**
-
-- [ ] Дропдаун зі списком токенів для полів "Відправляєте" та "Отримуєте"
-- [ ] **Infinite scroll** — підвантаження наступної сторінки при прокрутці списку вниз. Використати RTK Query для реалізаціі **Infinite scroll**
-- [ ] За замовчуванням підставляти: **USDT → BTC**
-
-**Обмін:**
-
-- [ ] Введення суми у полі "Відправляєте" → автоматично перераховується поле "Отримуєте"
-- [ ] Введення суми у полі "Отримуєте" → автоматично перераховується поле "Відправляєте"
-- [ ] Запит на `/swap/preview` надсилати з **throttling** (не частіше одного разу на 600 мс)
-- [ ] При зміні токену — **скинути курс** та очистити обидва інпути (залишити placeholder)
-- [ ] Кнопка **Swap** — міняє токени місцями (не суми), перераховує курс
-
-**Підтвердження:**
-
-- [ ] Кнопка "Підтвердити" **заблокована** до отримання успішного preview
-- [ ] При кліку — відображається модальне вікно:
-  > "Ви успішно обміняли `{symbol} {amount}` → `{symbol} {amount}`"
-- [ ] Кнопка **ОК** закриває модалку, скидає форму
-
----
-
-### Технічні вимоги
-
-- [ ] Розподіл по шарах FSD — сутності (`entities`), фічі (`features`), віджет (`widgets`)
-- [ ] Обов'язково розносити бізнес-логіку та UI-представлення по окремих слайсах відповідного шару
-- [ ] RTK Query для всіх запитів (reducer + middleware підключити у `store.ts`)
-- [ ] Анімації за допомогою **Framer Motion**: поява блоків, відкриття дропдауну, модальне вікно
-- [ ] Локалізація через **next-intl**: підтримати мови `en` та `uk` (файли у `dictionaries/`)
-- [ ] Типізація — без `any`, без `@ts-ignore`
-
----
-
-## Завдання 2 — Верстка та анимація блоків
-
-> 🎨 **Figma — Animated Block:** `https://www.figma.com/design/gsORiIKuNNp0mF9XvREqKR/Test_task_frontend-developer?node-id=1-1072&t=fCwZh4Cy8oEKG79J-0`
-
-Реалізуйте верстку 1, 2, 3 секцій. анімацію блоку, використовуючи **Framer Motion** або іншу бібліотеку.
-Загалом сайт потрібно "оживити" власними доречними анімаціями на ваш розсуд, а виділений блок із макета анімувати за наданим референсом.
-
-**За бажанням можно реалізувати секцію під номером 4**
-
-**Вимоги:**
-
-- [ ] Додати доречні авторські анімації для сайту, щоб інтерфейс відчувався живим
-- [ ] Виділений блок анімувати за прикладом із наданого референсу
-- [ ] Плавні переходи та акуратна інтеграція анімацій в інтерфейс
-- [ ] Компонент розмістити у відповідному шарі FSD
-
----
-
-## Критерії оцінювання
-
-| Критерій                                          | Вага   |
-| ------------------------------------------------- | ------ |
-| Дотримання структури FSD                          | ⭐⭐⭐ |
-| Якість та читабельність коду                      | ⭐⭐⭐ |
-| Коректна робота infinite scroll                   | ⭐⭐⭐ |
-| Throttling запитів до API                         | ⭐⭐   |
-| Якість анімацій (Framer Motion)                   | ⭐⭐   |
-| Локалізація (en / uk)                             | ⭐⭐   |
-| Покриття крайових кейсів (помилки, порожні стани) | ⭐⭐   |
-| Типізація TypeScript                              | ⭐⭐   |
-| Наявність тестів                                  | ⭐     |
-
----
-
-## Здача завдання
-
-1. Завантажте рішення у **публічний GitHub репозиторій**
-2. Надішліть посилання на репозиторій
-
-> **Запитання щодо завдання?** Пишіть — відповімо.
+Deployed on **Vercel** (zero config — it runs the Next.js middleware and the API proxy automatically).

@@ -3,6 +3,7 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { Inter } from "next/font/google";
 import { notFound } from "next/navigation";
 import { Toaster } from "sonner";
+import { LocaleSwitcher } from "@/05.features";
 import { AppLayout } from "../layouts";
 import { ReduxProvider, ThemeProvider } from "../providers";
 import "../styles/globals.css";
@@ -34,7 +35,7 @@ const RootLayout = async ({
   }
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body className={`${INTER.variable} min-h-screen flex flex-col`}>
         <NextIntlClientProvider>
           <ReduxProvider>
@@ -44,9 +45,9 @@ const RootLayout = async ({
               enableSystem
               disableTransitionOnChange
             >
+              <LocaleSwitcher />
               <AppLayout>{children}</AppLayout>
             </ThemeProvider>
-            {/* dont set z-index 10000000000000! */}
             <Toaster />
           </ReduxProvider>
         </NextIntlClientProvider>

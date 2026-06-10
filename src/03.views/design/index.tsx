@@ -1,5 +1,7 @@
+import { DesignShowcase } from "@/04.widgets";
+
 const DesignView = () => {
-  return <></>;
+  return <DesignShowcase />;
 };
 
 export default DesignView;
