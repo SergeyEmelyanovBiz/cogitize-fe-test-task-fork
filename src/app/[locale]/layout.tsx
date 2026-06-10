@@ -3,7 +3,7 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { Inter } from "next/font/google";
 import { notFound } from "next/navigation";
 import { Toaster } from "sonner";
-import { LocaleSwitcher } from "@/05.features";
+import { Header } from "@/04.widgets";
 import { AppLayout } from "../layouts";
 import { ReduxProvider, ThemeProvider } from "../providers";
 import "../styles/globals.css";
@@ -45,7 +45,7 @@ const RootLayout = async ({
               enableSystem
               disableTransitionOnChange
             >
-              <LocaleSwitcher />
+              <Header />
               <AppLayout>{children}</AppLayout>
             </ThemeProvider>
             <Toaster />

@@ -17,7 +17,7 @@ export const LocaleSwitcher = () => {
   };
 
   return (
-    <div className="fixed right-4 top-4 z-50 flex items-center gap-1 rounded-full bg-black/30 p-1 backdrop-blur">
+    <div className="flex items-center gap-1 rounded-full bg-black/30 p-1">
       {locales.map((locale) => (
         <button
           key={locale}

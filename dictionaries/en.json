@@ -1,4 +1,9 @@
 {
+  "nav": {
+    "swap": "Swap",
+    "design": "Design",
+    "guide": "Guide"
+  },
   "swap": {
     "convert": "Convert",
     "title": "Select cryptocurrency",
