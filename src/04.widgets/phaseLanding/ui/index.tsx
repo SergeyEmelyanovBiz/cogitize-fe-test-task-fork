@@ -1,4 +1,5 @@
 import { Geist } from "next/font/google";
+import { CreatorsSection } from "./creatorsSection";
 import { HeroSection } from "./heroSection";
 import { PhaseHeader } from "./phaseHeader";
 
@@ -9,6 +10,7 @@ export const PhaseLanding = () => {
     <div className={`${geist.className} bg-[#FEFEFE] text-[#181818]`}>
       <PhaseHeader />
       <HeroSection />
+      <CreatorsSection />
     </div>
   );
 };
