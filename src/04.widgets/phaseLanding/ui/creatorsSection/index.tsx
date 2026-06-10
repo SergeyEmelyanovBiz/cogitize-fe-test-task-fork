@@ -82,49 +82,58 @@ export const CreatorsSection = () => {
         </motion.div>
       </div>
 
-      {/* Dark "tribe" block — two portraits */}
-      <div className="grid grid-cols-1 sm:grid-cols-2">
-        <div className="relative min-h-[420px]">
-          <img
-            src={asset("photo-smoke.png")}
-            alt=""
-            className="absolute inset-0 h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/20" />
-          <motion.div
-            {...reveal}
-            className="absolute bottom-8 left-8 max-w-xs text-white"
-          >
-            <span className="relative inline-block px-1 text-2xl font-bold text-[#181818]">
-              <img
-                src={asset("underline-1.svg")}
-                alt=""
-                className="absolute inset-x-0 -bottom-1 -z-10 h-full w-full"
-              />
-              Just you and your tribe
-            </span>
-            <br />
-            <span className="relative mt-1 inline-block px-1 text-2xl font-bold text-[#181818]">
-              <img
-                src={asset("underline-2.svg")}
-                alt=""
-                className="absolute inset-x-0 -bottom-1 -z-10 h-full w-full"
-              />
-              Zero algorithm noise.
-            </span>
-            <p className="mt-4 text-base font-medium leading-relaxed text-white/90">
-              Only your raw concepts, your curated drops, and the community that
-              stands by your side
-            </p>
-          </motion.div>
-        </div>
+      {/* Dark "tribe" block — two portraits, with the curved gray divider */}
+      <div className="relative">
+        {/* curved gray bottom of the section dipping into the photos */}
+        <img
+          src={asset("section2-curve.svg")}
+          alt=""
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-0 z-20 w-full -translate-y-[85%] select-none"
+        />
 
-        <div className="relative min-h-[420px]">
-          <img
-            src={asset("photo-orange.png")}
-            alt=""
-            className="absolute inset-0 h-full w-full object-cover"
-          />
+        <div className="grid grid-cols-1 sm:grid-cols-2">
+          <div className="relative min-h-[460px]">
+            <img
+              src={asset("photo-smoke.png")}
+              alt=""
+              className="absolute inset-0 h-full w-full object-cover object-[center_70%]"
+            />
+            <motion.div
+              {...reveal}
+              className="absolute bottom-10 left-8 z-10 max-w-xs text-[#181818]"
+            >
+              <span className="relative isolate inline-block px-2 py-0.5 text-2xl font-bold">
+                <img
+                  src={asset("underline-1.svg")}
+                  alt=""
+                  className="absolute inset-0 -z-10 h-full w-full"
+                />
+                Just you and your tribe
+              </span>
+              <br />
+              <span className="relative isolate mt-2 inline-block px-2 py-0.5 text-2xl font-bold">
+                <img
+                  src={asset("underline-2.svg")}
+                  alt=""
+                  className="absolute inset-0 -z-10 h-full w-full"
+                />
+                Zero algorithm noise.
+              </span>
+              <p className="mt-4 text-base font-medium leading-relaxed">
+                Only your raw concepts, your curated drops, and the community
+                that stands by your side
+              </p>
+            </motion.div>
+          </div>
+
+          <div className="relative min-h-[460px]">
+            <img
+              src={asset("photo-orange.png")}
+              alt=""
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+          </div>
         </div>
       </div>
     </section>
