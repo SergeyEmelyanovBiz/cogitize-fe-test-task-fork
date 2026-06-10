@@ -15,7 +15,7 @@ export const CreatorsSection = () => {
   return (
     <section id="how-it-works" className="relative overflow-hidden bg-[#EFEEED]">
       {/* Editorial heading block */}
-      <div className="relative mx-auto max-w-6xl px-6 pt-16 pb-40">
+      <div className="relative z-20 mx-auto max-w-6xl px-6 pt-16 pb-40">
         <motion.p
           {...reveal}
           className="text-center text-base font-medium text-[#181818]"
@@ -89,7 +89,7 @@ export const CreatorsSection = () => {
           src={asset("section2-curve.svg")}
           alt=""
           aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-0 z-20 w-full -translate-y-[85%] select-none"
+          className="pointer-events-none absolute inset-x-0 top-0 z-10 w-full -translate-y-[88%] select-none"
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2">
