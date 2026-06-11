@@ -1,4 +1,5 @@
 import { Geist } from "next/font/google";
+import { BenefitsSection } from "./benefitsSection";
 import { CreatorsSection } from "./creatorsSection";
 import { HeroSection } from "./heroSection";
 import { PhaseHeader } from "./phaseHeader";
@@ -13,6 +14,7 @@ export const PhaseLanding = () => {
       <HeroSection />
       <CreatorsSection />
       <StepsSection />
+      <BenefitsSection />
     </div>
   );
 };
