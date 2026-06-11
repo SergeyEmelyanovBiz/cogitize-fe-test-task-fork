@@ -34,6 +34,16 @@ const STEPS = [
 
 const DURATION = 5;
 
+// A distinct entrance for the sticker on each step.
+const STICKER_IN = [
+  // START — pop
+  { initial: { scale: 0, opacity: 0 }, transition: { type: "spring", stiffness: 300, damping: 13 } },
+  // ADD — drop from above
+  { initial: { y: -70, opacity: 0 }, transition: { type: "spring", stiffness: 240, damping: 15 } },
+  // SHARE — spin in
+  { initial: { rotate: 110, scale: 0.4, opacity: 0 }, transition: { duration: 0.6, ease: "backOut" } },
+] as const;
+
 export const StepsSection = () => {
   const [step, setStep] = useState(0);
   const active = STEPS[step];
@@ -49,7 +59,7 @@ export const StepsSection = () => {
           <h2 className="font-black uppercase leading-[0.92] tracking-tight text-[clamp(2.5rem,8vw,7rem)]">
             Three steps to drops
           </h2>
-          <span className="absolute bottom-[15%] left-[34%] isolate inline-block -rotate-2 px-3 py-0.5 text-sm font-medium text-white">
+          <span className="absolute bottom-[29%] left-[27%] isolate inline-block -rotate-2 px-3 py-0.5 text-sm font-medium text-white">
             <img
               src={asset("simple-line.svg")}
               alt=""
@@ -135,16 +145,24 @@ export const StepsSection = () => {
               </div>
             </div>
 
-            {/* stickers — outside the clipped card so they overflow */}
-            <img
+            {/* stickers — outside the clipped card; a different entrance per step */}
+            <motion.img
+              key={`sticker-l-${step}`}
               src={asset(active.sticker)}
               alt=""
-              className="absolute -left-8 top-[30%] z-20 w-36 -rotate-6"
+              initial={STICKER_IN[step].initial}
+              animate={{ opacity: 1, scale: 1, y: 0, rotate: -6 }}
+              transition={STICKER_IN[step].transition}
+              className="absolute -left-8 top-[30%] z-20 w-36"
             />
-            <img
+            <motion.img
+              key={`sticker-r-${step}`}
               src={asset(active.sticker)}
               alt=""
-              className="absolute -right-10 top-[52%] z-20 w-36 rotate-6"
+              initial={STICKER_IN[step].initial}
+              animate={{ opacity: 1, scale: 1, y: 0, rotate: 6 }}
+              transition={STICKER_IN[step].transition}
+              className="absolute -right-10 top-[52%] z-20 w-36"
             />
 
             {/* preload stickers to avoid a flash on slide change */}
