@@ -15,7 +15,7 @@ export const CreatorsSection = () => {
   return (
     <section id="how-it-works" className="relative overflow-hidden bg-[#EFEEED]">
       {/* Editorial heading block */}
-      <div className="relative z-20 mx-auto max-w-6xl px-6 pt-16 pb-40">
+      <div className="relative z-20 mx-auto max-w-6xl px-6 pt-[100px] pb-12">
         <motion.p
           {...reveal}
           className="text-center text-base font-medium text-[#181818]"
