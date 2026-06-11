@@ -26,7 +26,7 @@ export const CreatorsSection = () => {
         <div className="relative mt-8">
           <motion.h2
             {...reveal}
-            className="text-center font-black uppercase leading-[0.9] tracking-tight text-[#050505] text-[clamp(2.5rem,10vw,8.5rem)]"
+            className="relative z-10 text-center font-black uppercase leading-[0.9] tracking-tight text-[#050505] text-[clamp(2.5rem,10vw,8.5rem)]"
           >
             Phase is a space for creators to be seen
           </motion.h2>
@@ -36,13 +36,13 @@ export const CreatorsSection = () => {
             {...reveal}
             src={asset("our-mission.svg")}
             alt="Our mission"
-            className="absolute -top-3 left-[16%] z-10 w-40 -rotate-6 sm:w-48"
+            className="absolute -top-3 left-[16%] z-20 w-40 -rotate-6 sm:w-48"
           />
 
           {/* Duo polaroid with "Just you and your audience" over its bottom-right */}
           <motion.div
             {...reveal}
-            className="absolute right-[1%] top-[28%] z-10 w-52 sm:w-64"
+            className="absolute right-[-8%] top-[30%] z-0 w-52 sm:w-64"
           >
             <div className="bg-white pb-6 shadow-xl">
               <img src={asset("photo-duo.png")} alt="" className="w-full" />
@@ -50,7 +50,7 @@ export const CreatorsSection = () => {
             <img
               src={asset("just-you-audience.svg")}
               alt="Just you and your audience"
-              className="absolute -bottom-13 -right-20 w-40 sm:w-48"
+              className="absolute -bottom-8 -right-20 w-40 sm:w-48"
             />
           </motion.div>
 
@@ -59,7 +59,7 @@ export const CreatorsSection = () => {
             {...reveal}
             src={asset("heart.svg")}
             alt=""
-            className="absolute bottom-[4%] right-[14%] z-10 w-8"
+            className="absolute bottom-[4%] right-[14%] z-20 w-8"
           />
         </div>
 
