@@ -54,13 +54,13 @@ export const BenefitsSection = () => {
             <img
               src={asset(b.photo)}
               alt=""
-              className="absolute inset-0 h-full w-full object-cover"
+              className="absolute inset-0 h-full w-full object-cover object-top"
             />
             <div
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(to bottom, #181818 0%, transparent 52%)",
+                  "linear-gradient(to bottom, #181818 0%, transparent 200%)",
               }}
             />
           </div>
