@@ -19,7 +19,7 @@ export const PhaseHeader = ({ onOpenMenu }: PhaseHeaderProps) => {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
         <a
           href="#home"
-          className="rounded-lg bg-black/[0.04] px-3 py-1.5 text-xl font-bold tracking-tight text-black"
+          className="rounded-lg bg-black/[0.04] px-3 py-1.5 text-xl font-bold tracking-tight text-black transition-colors hover:bg-black/[0.08]"
         >
           PHASE
         </a>
@@ -38,7 +38,7 @@ export const PhaseHeader = ({ onOpenMenu }: PhaseHeaderProps) => {
 
         <button
           type="button"
-          className="hidden rounded-lg border border-[#181818] px-5 py-2 text-base font-medium text-[#050505] transition-colors hover:bg-[#181818] hover:text-white md:block"
+          className="hidden rounded-lg border border-[#181818] px-5 py-2 text-base font-medium text-[#050505] transition-all hover:bg-[#181818] hover:text-white active:scale-95 md:block"
         >
           Log in
         </button>
@@ -47,7 +47,7 @@ export const PhaseHeader = ({ onOpenMenu }: PhaseHeaderProps) => {
           type="button"
           aria-label="Open menu"
           onClick={onOpenMenu}
-          className="rounded-lg p-2 text-[#181818] md:hidden"
+          className="rounded-lg p-2 text-[#181818] transition-colors hover:bg-black/[0.05] active:scale-95 md:hidden"
         >
           <Menu className="size-6" />
         </button>

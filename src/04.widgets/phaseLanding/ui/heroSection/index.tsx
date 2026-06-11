@@ -66,10 +66,16 @@ export const HeroSection = () => {
 
         <motion.button
           type="button"
-          className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#FFD000] px-6 py-3.5 text-base font-medium text-[#050505] transition-transform hover:scale-[1.03]"
+          className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#FFD000] px-6 py-3.5 text-base font-medium text-[#050505]"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.45, duration: 0.5 }}
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.96 }}
+          transition={{
+            delay: 0.45,
+            duration: 0.5,
+            scale: { type: "spring", stiffness: 400, damping: 17 },
+          }}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img

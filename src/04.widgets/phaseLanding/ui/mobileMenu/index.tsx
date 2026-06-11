@@ -39,7 +39,7 @@ export const MobileMenu = ({ open, onClose }: MobileMenuProps) => {
               type="button"
               aria-label="Close menu"
               onClick={onClose}
-              className="rounded-lg bg-black/[0.04] p-2 text-[#181818]"
+              className="rounded-lg bg-black/[0.04] p-2 text-[#181818] transition-colors hover:bg-black/[0.08] active:scale-95"
             >
               <X className="size-5" />
             </button>
@@ -51,7 +51,7 @@ export const MobileMenu = ({ open, onClose }: MobileMenuProps) => {
                 key={item.href}
                 href={item.href}
                 onClick={onClose}
-                className="relative flex items-start gap-2 border-b border-black/10 py-5 text-[40px] font-medium leading-none tracking-[-0.03em] text-[#050505]"
+                className="relative flex items-start gap-2 border-b border-black/10 py-5 text-[40px] font-medium leading-none tracking-[-0.03em] text-[#050505] transition-colors hover:text-[#BF57F3] active:opacity-60"
               >
                 {item.label}
                 <span className="text-xs font-medium text-[#BF57F3]">
@@ -74,7 +74,7 @@ export const MobileMenu = ({ open, onClose }: MobileMenuProps) => {
           <div className="mt-auto flex flex-col gap-3">
             <button
               type="button"
-              className="flex h-[42px] items-center justify-center gap-2 rounded-xl bg-[#FFD000] text-sm font-semibold text-[#181818]"
+              className="flex h-[42px] items-center justify-center gap-2 rounded-xl bg-[#FFD000] text-sm font-semibold text-[#181818] transition-transform hover:-translate-y-0.5 active:scale-[0.97]"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -87,7 +87,7 @@ export const MobileMenu = ({ open, onClose }: MobileMenuProps) => {
             </button>
             <button
               type="button"
-              className="h-[42px] rounded-xl border border-[#181818] text-sm font-semibold text-[#181818]"
+              className="h-[42px] rounded-xl border border-[#181818] text-sm font-semibold text-[#181818] transition-all hover:bg-[#181818] hover:text-white active:scale-[0.97]"
             >
               Log in
             </button>
