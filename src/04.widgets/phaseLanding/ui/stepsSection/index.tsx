@@ -83,7 +83,7 @@ export const StepsSection = () => {
             <div className="bg-white pt-[5px] pr-[5px] pb-[19px] pl-[5px] shadow-2xl">
               {/* yellow/purple card — clips decal + content (not the stickers) */}
               <div
-                className="relative aspect-[421/610] overflow-hidden"
+                className="relative aspect-[325/421] overflow-hidden sm:aspect-[421/610]"
                 style={{ backgroundColor: active.base }}
               >
                 {/* all decals preloaded; active one shown instantly via opacity */}
@@ -122,7 +122,7 @@ export const StepsSection = () => {
                   ))}
                 </div>
 
-                <div className="relative flex h-full flex-col p-6 pt-14 text-[#181818]">
+                <div className="relative flex h-full flex-col p-5 pt-12 text-[#181818] sm:p-6 sm:pt-14">
                   <div className="flex items-center gap-2">
                     <span className="flex size-7 items-center justify-center rounded-full bg-[#050505] text-[7px] font-extrabold tracking-tight text-[#FFD909]">
                       GIFTY
@@ -137,13 +137,15 @@ export const StepsSection = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.3 }}
-                      className="mt-auto flex flex-col text-left"
+                      className="mt-[32%] flex flex-col text-left sm:mt-auto"
                     >
-                      <p className="text-xl font-medium leading-6">{active.n}</p>
-                      <h3 className="mt-4 text-[44px] font-medium leading-[48px]">
+                      <p className="text-base font-medium leading-5 sm:text-xl sm:leading-6">
+                        {active.n}
+                      </p>
+                      <h3 className="mt-3 text-[28px] font-medium leading-[30px] sm:mt-4 sm:text-[44px] sm:leading-[48px]">
                         {active.title}
                       </h3>
-                      <p className="mt-10 text-2xl font-normal leading-[28px]">
+                      <p className="mt-5 text-lg font-normal leading-6 sm:mt-10 sm:text-2xl sm:leading-[28px]">
                         {active.body}
                       </p>
                     </motion.div>
@@ -160,7 +162,7 @@ export const StepsSection = () => {
               initial={STICKER_IN[step].initial}
               animate={{ opacity: 1, scale: 1, y: 0, rotate: -6 }}
               transition={STICKER_IN[step].transition}
-              className={`absolute -left-8 ${STICKER_POS[step].left} z-20 w-36`}
+              className={`absolute -left-8 ${STICKER_POS[step].left} z-20 w-28 sm:w-36`}
             />
             <motion.img
               key={`sticker-r-${step}`}
@@ -169,7 +171,7 @@ export const StepsSection = () => {
               initial={STICKER_IN[step].initial}
               animate={{ opacity: 1, scale: 1, y: 0, rotate: 6 }}
               transition={STICKER_IN[step].transition}
-              className={`absolute -right-10 ${STICKER_POS[step].right} z-20 w-36`}
+              className={`absolute -right-10 ${STICKER_POS[step].right} z-20 w-28 sm:w-36`}
             />
 
             {/* preload stickers to avoid a flash on slide change */}
