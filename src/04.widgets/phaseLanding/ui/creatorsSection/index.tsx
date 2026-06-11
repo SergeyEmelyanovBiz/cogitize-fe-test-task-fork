@@ -39,20 +39,18 @@ export const CreatorsSection = () => {
             className="absolute -top-3 left-[16%] z-10 w-40 -rotate-6 sm:w-48"
           />
 
-          {/* Duo photo with "Just you and your audience" over its bottom-right */}
+          {/* Duo polaroid with "Just you and your audience" over its bottom-right */}
           <motion.div
             {...reveal}
-            className="absolute right-[-5%] top-[30%] z-10 w-52 sm:w-64"
+            className="absolute right-[1%] top-[28%] z-10 w-52 sm:w-64"
           >
-            <img
-              src={asset("photo-duo.png")}
-              alt=""
-              className="w-full shadow-xl"
-            />
+            <div className="bg-white pb-6 shadow-xl">
+              <img src={asset("photo-duo.png")} alt="" className="w-full" />
+            </div>
             <img
               src={asset("just-you-audience.svg")}
               alt="Just you and your audience"
-              className="absolute -bottom-12 right-0 w-40 sm:w-48"
+              className="absolute -bottom-13 -right-20 w-40 sm:w-48"
             />
           </motion.div>
 
