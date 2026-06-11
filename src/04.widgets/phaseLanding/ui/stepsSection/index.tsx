@@ -41,9 +41,9 @@ export const StepsSection = () => {
   return (
     <section
       id="features"
-      className="overflow-hidden bg-[#181818] px-6 py-24 text-white"
+      className="overflow-hidden bg-[#181818] px-6 py-28 text-white"
     >
-      <div className="mx-auto grid max-w-6xl items-center gap-16 lg:grid-cols-2">
+      <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
         {/* Left — heading */}
         <div className="relative">
           <h2 className="font-black uppercase leading-[0.92] tracking-tight text-[clamp(2.5rem,8vw,7rem)]">
@@ -60,8 +60,8 @@ export const StepsSection = () => {
         </div>
 
         {/* Right — stories card + intro */}
-        <div className="relative mx-auto flex w-full max-w-md items-start gap-6">
-          <div className="relative w-full max-w-[340px]">
+        <div className="flex items-start justify-center gap-6">
+          <div className="relative w-full max-w-[400px]">
             {/* progress bars */}
             <div className="absolute inset-x-5 top-5 z-30 flex gap-1.5">
               {STEPS.map((_, i) => (
@@ -86,18 +86,24 @@ export const StepsSection = () => {
               ))}
             </div>
 
-            {/* card */}
+            {/* card — clips the decal + content (but not the stickers) */}
             <div
               className="relative aspect-[421/610] overflow-hidden rounded-sm shadow-2xl"
               style={{ backgroundColor: active.base }}
             >
-              <img
-                src={asset(active.decal)}
-                alt=""
-                className="absolute inset-0 h-full w-full"
-              />
+              {/* all decals preloaded, active one shown via opacity */}
+              {STEPS.map((s, i) => (
+                <img
+                  key={s.decal}
+                  src={asset(s.decal)}
+                  alt=""
+                  className={`absolute inset-0 h-full w-full transition-opacity duration-200 ${
+                    i === step ? "opacity-100" : "opacity-0"
+                  }`}
+                />
+              ))}
 
-              <div className="relative flex h-full flex-col p-6 pt-10 text-[#181818]">
+              <div className="relative flex h-full flex-col p-6 pt-12 text-[#181818]">
                 <div className="flex items-center gap-2">
                   <span className="flex size-7 items-center justify-center rounded-full bg-[#050505] text-[7px] font-extrabold tracking-tight text-[#FFD909]">
                     GIFTY
@@ -118,27 +124,35 @@ export const StepsSection = () => {
                     <h3 className="mt-2 text-3xl font-bold leading-tight">
                       {active.title}
                     </h3>
-                    <p className="mt-auto text-base font-medium">{active.body}</p>
+                    <p className="mt-auto text-base font-medium">
+                      {active.body}
+                    </p>
                   </motion.div>
                 </AnimatePresence>
               </div>
+            </div>
 
-              {/* stickers */}
-              <img
-                src={asset(active.sticker)}
-                alt=""
-                className="absolute -left-6 top-[34%] z-20 w-28 -rotate-6"
-              />
-              <img
-                src={asset(active.sticker)}
-                alt=""
-                className="absolute -right-8 top-[56%] z-20 w-28 rotate-6"
-              />
+            {/* stickers — outside the clipped card so they overflow its edges */}
+            <img
+              src={asset(active.sticker)}
+              alt=""
+              className="absolute -left-8 top-[32%] z-20 w-32 -rotate-6"
+            />
+            <img
+              src={asset(active.sticker)}
+              alt=""
+              className="absolute -right-10 top-[54%] z-20 w-32 rotate-6"
+            />
+
+            {/* preload stickers to avoid a flash on slide change */}
+            <div className="pointer-events-none absolute h-0 w-0 overflow-hidden opacity-0">
+              {STEPS.map((s) => (
+                <img key={s.sticker} src={asset(s.sticker)} alt="" />
+              ))}
             </div>
           </div>
 
-          {/* intro text */}
-          <div className="hidden w-40 shrink-0 pt-6 lg:block">
+          <div className="hidden w-40 shrink-0 pt-8 lg:block">
             <p className="text-lg font-bold">Create, add, share.</p>
             <p className="mt-2 text-sm leading-relaxed text-white/70">
               Everything you need to start receiving gifts without the friction
