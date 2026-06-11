@@ -39,7 +39,7 @@ export const HeroSection = () => {
           </motion.span>
 
           <motion.img
-            src="/images/phase/phase-logo.png"
+            src="/images/phase/phase-logo.webp"
             alt="PHASE"
             width={1400}
             height={355}

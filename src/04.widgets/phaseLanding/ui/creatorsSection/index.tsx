@@ -44,7 +44,7 @@ export const CreatorsSection = () => {
             className="absolute right-[-4%] top-[10%] z-0 hidden w-52 sm:block sm:w-64"
           >
             <div className="bg-white pb-6 shadow-xl">
-              <img src={asset("photo-duo.png")} alt="" className="w-full" />
+              <img src={asset("photo-duo.webp")} alt="" className="w-full" />
             </div>
             <img
               src={asset("just-you-audience.svg")}
@@ -68,7 +68,7 @@ export const CreatorsSection = () => {
           className="relative z-30 mx-auto -mb-20 mt-8 w-52 -rotate-2 sm:absolute sm:left-[95px] sm:-top-24 sm:mx-0 sm:mb-0 sm:mt-0 sm:w-60"
         >
           <div className="bg-white p-2 shadow-xl">
-            <img src={asset("photo-fairy.png")} alt="" className="w-full" />
+            <img src={asset("photo-fairy.webp")} alt="" className="w-full" />
             <div className="relative h-16">
               <img
                 src={asset("action-words.svg")}
@@ -95,7 +95,7 @@ export const CreatorsSection = () => {
           <div className="grid grid-cols-2">
             <div className="relative min-h-[460px]">
               <img
-                src={asset("photo-smoke.png")}
+                src={asset("photo-smoke.webp")}
               alt=""
               className="absolute inset-0 h-full w-full object-cover object-[center_70%]"
             />
@@ -129,7 +129,7 @@ export const CreatorsSection = () => {
 
             <div className="relative min-h-[460px]">
               <img
-                src={asset("photo-orange.png")}
+                src={asset("photo-orange.webp")}
                 alt=""
                 className="absolute inset-0 h-full w-full object-cover"
               />

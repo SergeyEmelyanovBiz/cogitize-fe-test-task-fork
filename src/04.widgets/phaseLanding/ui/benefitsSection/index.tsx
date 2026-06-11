@@ -9,31 +9,31 @@ const BENEFITS = [
     name: "Exhibition",
     desc: "A premium editorial layout featuring your aesthetic",
     tag: "100% your DNA",
-    photo: "benefit-exhibition.png",
+    photo: "benefit-exhibition.webp",
   },
   {
     name: "Capsules",
     desc: "Publish, modify your capsule drops instantly.",
     tag: "No messy feeds",
-    photo: "benefit-capsules.png",
+    photo: "benefit-capsules.webp",
   },
   {
     name: "Telemetry",
     desc: "Visitors get live updates on what’s currently available.",
     tag: "No missed drops",
-    photo: "benefit-telemetry.png",
+    photo: "benefit-telemetry.webp",
   },
   {
     name: "Domain",
     desc: "A short, clean web address — phase.com/your-name.",
     tag: "Instant access",
-    photo: "benefit-domain.png",
+    photo: "benefit-domain.webp",
   },
   {
     name: "Impact",
     desc: "Discover what your audience interacts with most.",
     tag: "Deep audience data",
-    photo: "benefit-impact.png",
+    photo: "benefit-impact.webp",
   },
 ];
 
