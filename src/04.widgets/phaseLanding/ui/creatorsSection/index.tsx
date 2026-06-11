@@ -15,7 +15,7 @@ export const CreatorsSection = () => {
   return (
     <section id="how-it-works" className="relative overflow-hidden bg-[#EFEEED]">
       {/* Editorial heading block */}
-      <div className="relative z-20 mx-auto max-w-6xl px-6 pt-[100px] pb-12">
+      <div className="relative z-20 mx-auto max-w-6xl px-6 pt-[100px] pb-2">
         <motion.p
           {...reveal}
           className="text-center text-base font-medium text-[#181818]"
@@ -62,15 +62,25 @@ export const CreatorsSection = () => {
             className="absolute bottom-[4%] right-[14%] z-20 w-8"
           />
         </div>
+      </div>
 
-        {/* Fairy polaroid card with yellow smiley + "Action not just words" */}
-        <motion.div {...reveal} className="relative mt-12 w-52 -rotate-2 sm:w-60">
+      {/* Dark "tribe" block — two portraits, with the curved gray divider */}
+      <div className="relative">
+        {/* curved gray bottom of the section dipping into the photos */}
+        <img
+          src={asset("section2-curve.svg")}
+          alt=""
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-0 z-10 w-full -translate-y-[88%] select-none"
+        />
+
+        {/* Fairy polaroid overlapping the boundary into the dark block */}
+        <motion.div
+          {...reveal}
+          className="absolute left-[82px] -top-40 z-30 w-52 -rotate-2 sm:w-60"
+        >
           <div className="bg-white p-2 shadow-xl">
-            <img
-              src={asset("photo-fairy.png")}
-              alt=""
-              className="w-full"
-            />
+            <img src={asset("photo-fairy.png")} alt="" className="w-full" />
             <div className="relative h-16">
               <img
                 src={asset("action-words.svg")}
@@ -85,17 +95,6 @@ export const CreatorsSection = () => {
             className="absolute -right-4 -top-4 w-12"
           />
         </motion.div>
-      </div>
-
-      {/* Dark "tribe" block — two portraits, with the curved gray divider */}
-      <div className="relative">
-        {/* curved gray bottom of the section dipping into the photos */}
-        <img
-          src={asset("section2-curve.svg")}
-          alt=""
-          aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-0 z-10 w-full -translate-y-[88%] select-none"
-        />
 
         <div className="grid grid-cols-1 sm:grid-cols-2">
           <div className="relative min-h-[460px]">
@@ -106,7 +105,7 @@ export const CreatorsSection = () => {
             />
             <motion.div
               {...reveal}
-              className="absolute bottom-10 left-8 z-10 max-w-xs text-[#181818]"
+              className="absolute bottom-10 left-20 z-10 max-w-xs text-[#181818]"
             >
               <span className="relative isolate inline-block px-2 py-0.5 text-2xl font-bold">
                 <img
