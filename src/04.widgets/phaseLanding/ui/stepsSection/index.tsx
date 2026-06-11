@@ -130,13 +130,13 @@ export const StepsSection = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.3 }}
-                      className="mt-[30%] flex flex-1 flex-col"
+                      className="mt-auto flex flex-col text-left"
                     >
-                      <p className="text-sm font-medium">{active.n}</p>
-                      <h3 className="mt-2 text-3xl font-bold leading-tight">
+                      <p className="text-xl font-medium leading-6">{active.n}</p>
+                      <h3 className="mt-4 text-[44px] font-medium leading-[48px]">
                         {active.title}
                       </h3>
-                      <p className="mt-auto text-base font-medium">
+                      <p className="mt-10 text-2xl font-normal leading-[28px]">
                         {active.body}
                       </p>
                     </motion.div>
