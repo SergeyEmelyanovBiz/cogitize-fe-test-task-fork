@@ -42,7 +42,7 @@ export const CreatorsSection = () => {
           {/* Duo polaroid with "Just you and your audience" over its bottom-right */}
           <motion.div
             {...reveal}
-            className="absolute right-[-8%] top-[30%] z-0 w-52 sm:w-64"
+            className="absolute right-[-4%] top-[10%] z-0 w-52 sm:w-64"
           >
             <div className="bg-white pb-6 shadow-xl">
               <img src={asset("photo-duo.png")} alt="" className="w-full" />
