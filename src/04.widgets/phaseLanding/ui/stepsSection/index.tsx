@@ -34,6 +34,13 @@ const STEPS = [
 
 const DURATION = 5;
 
+// Vertical placement of the two stickers per step.
+const STICKER_POS = [
+  { left: "top-[30%]", right: "top-[52%]" },
+  { left: "top-[30%]", right: "top-[52%]" },
+  { left: "top-[24%]", right: "top-[58%]" },
+] as const;
+
 // A distinct entrance for the sticker on each step.
 const STICKER_IN = [
   // START — pop
@@ -153,7 +160,7 @@ export const StepsSection = () => {
               initial={STICKER_IN[step].initial}
               animate={{ opacity: 1, scale: 1, y: 0, rotate: -6 }}
               transition={STICKER_IN[step].transition}
-              className="absolute -left-8 top-[30%] z-20 w-36"
+              className={`absolute -left-8 ${STICKER_POS[step].left} z-20 w-36`}
             />
             <motion.img
               key={`sticker-r-${step}`}
@@ -162,7 +169,7 @@ export const StepsSection = () => {
               initial={STICKER_IN[step].initial}
               animate={{ opacity: 1, scale: 1, y: 0, rotate: 6 }}
               transition={STICKER_IN[step].transition}
-              className="absolute -right-10 top-[52%] z-20 w-36"
+              className={`absolute -right-10 ${STICKER_POS[step].right} z-20 w-36`}
             />
 
             {/* preload stickers to avoid a flash on slide change */}
