@@ -129,14 +129,16 @@ export const TokenSelect = ({ selected, onSelect }: TokenSelectProps) => {
                 </p>
               ) : (
                 <>
-                  {assets.map((asset) => (
-                    <AssetRow
-                      key={asset.id}
-                      asset={asset}
-                      active={asset.id === selected.id}
-                      onSelect={handleSelect}
-                    />
-                  ))}
+                  <div className="divide-y divide-gray-100">
+                    {assets.map((asset) => (
+                      <AssetRow
+                        key={asset.id}
+                        asset={asset}
+                        active={asset.id === selected.id}
+                        onSelect={handleSelect}
+                      />
+                    ))}
+                  </div>
                   <div ref={sentinelRef} className="h-px" />
                   {isFetching && hasNextPage && (
                     <div className="flex justify-center py-3">
