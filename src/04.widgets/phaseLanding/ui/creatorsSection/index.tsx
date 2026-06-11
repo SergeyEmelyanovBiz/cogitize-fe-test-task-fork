@@ -36,7 +36,7 @@ export const CreatorsSection = () => {
             {...reveal}
             src={asset("our-mission.svg")}
             alt="Our mission"
-            className="absolute -top-3 left-[16%] z-20 w-40 -rotate-6 sm:w-48"
+            className="absolute -top-6 left-[22%] z-20 w-40 -rotate-6 sm:w-48"
           />
 
           {/* Duo polaroid with "Just you and your audience" over its bottom-right */}
