@@ -11,7 +11,6 @@ export const HeroSection = () => {
     >
       <div className="flex flex-1 flex-col items-center justify-center px-6 pt-28 pb-10">
         <div className="relative w-full max-w-6xl">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
           <motion.img
             src="/images/phase/smiley.svg"
             alt=""
@@ -28,7 +27,6 @@ export const HeroSection = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ delay: 0.65, type: "spring", stiffness: 280 }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/phase/badge-bg.svg"
               alt=""
@@ -40,7 +38,6 @@ export const HeroSection = () => {
             </span>
           </motion.span>
 
-          {/* eslint-disable-next-line @next/next/no-img-element */}
           <motion.img
             src="/images/phase/phase-logo.png"
             alt="PHASE"
@@ -75,7 +72,6 @@ export const HeroSection = () => {
             scale: { type: "spring", stiffness: 400, damping: 17 },
           }}
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/phase/arrow-reply.svg"
             alt=""

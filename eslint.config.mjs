@@ -1,46 +1,48 @@
 import { defineConfig } from "eslint/config";
 import nextCoreWebVitals from "eslint-config-next/core-web-vitals";
 import nextTypescript from "eslint-config-next/typescript";
-import _import from "eslint-plugin-import";
-import { fixupPluginRules } from "@eslint/compat";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+export default defineConfig([
+    {
+        files: ["src/**/*.{ts,tsx}"],
 
-export default defineConfig([{
-    extends: [...nextCoreWebVitals, ...nextTypescript],
+        extends: [...nextCoreWebVitals, ...nextTypescript],
 
-    plugins: {
-        import: fixupPluginRules(_import),
+        rules: {
+            "@typescript-eslint/no-explicit-any": "off",
+            "@next/next/no-img-element": "off",
+
+            "import/no-internal-modules": ["error", {
+                allow: [
+                    "**/index.ts",
+                    "next/server",
+                    "next/navigation",
+                    "@reduxjs/toolkit/query/react",
+                    "@reduxjs/toolkit/query",
+                    "next-intl/middleware",
+                    "next-intl/routing",
+                    "next-intl/server",
+                    "next-intl/navigation",
+                    "next/font/google",
+                    "/styles/globals.css",
+                    "next-intl/plugin",
+                    "next/constants.js",
+                ],
+            }],
+        },
     },
+    {
+        files: ["src/**/index.ts", "src/**/index.tsx"],
 
-    rules: {
-        "@typescript-eslint/no-explicit-any": "off",
-
-        "import/no-internal-modules": ["error", {
-            allow: [
-                "**/index.ts",
-                "next/server",
-                "next/navigation",
-                "@reduxjs/toolkit/query/react",
-                "@reduxjs/toolkit/query",
-                "next-intl/middleware",
-                "next-intl/routing",
-                "next-intl/server",
-                "next-intl/navigation",
-                "next/font/google",
-                "/styles/globals.css",
-                "next-intl/plugin",
-                "next/constants.js",
-            ],
-        }],
+        rules: {
+            "import/no-internal-modules": "off",
+        },
     },
-}, {
-    files: ["**/index.ts", "**/index.tsx"],
+    {
+        files: ["**/*.d.ts"],
 
-    rules: {
-        "import/no-internal-modules": "off",
+        rules: {
+            "@typescript-eslint/no-empty-object-type": "off",
+        },
     },
-}]);
+]);

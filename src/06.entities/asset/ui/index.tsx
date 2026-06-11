@@ -18,7 +18,6 @@ export const AssetRow = ({ asset, onSelect, active }: AssetRowProps) => {
         active && "bg-black/5",
       )}
     >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={asset.assetImage}
         alt={asset.symbol}

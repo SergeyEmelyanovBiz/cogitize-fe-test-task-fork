@@ -73,7 +73,6 @@ export const TokenSelect = ({ selected, onSelect }: TokenSelectProps) => {
         onClick={() => setOpen((value) => !value)}
         className="flex items-center gap-2 transition-opacity hover:opacity-80 active:opacity-60"
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={selected.assetImage}
           alt={selected.symbol}

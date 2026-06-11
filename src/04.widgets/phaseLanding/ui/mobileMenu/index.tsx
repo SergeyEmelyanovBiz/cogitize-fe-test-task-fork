@@ -58,7 +58,6 @@ export const MobileMenu = ({ open, onClose }: MobileMenuProps) => {
                 </span>
 
                 {item.href === "#for-whom" && (
-                  /* eslint-disable-next-line @next/next/no-img-element */
                   <img
                     src="/images/phase/start-wishing.svg"
                     alt=""
@@ -75,7 +74,6 @@ export const MobileMenu = ({ open, onClose }: MobileMenuProps) => {
               type="button"
               className="flex h-[42px] items-center justify-center gap-2 rounded-xl bg-[#FFD000] text-sm font-semibold text-[#181818] transition-transform hover:-translate-y-0.5 active:scale-[0.97]"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/phase/arrow-reply.svg"
                 alt=""
