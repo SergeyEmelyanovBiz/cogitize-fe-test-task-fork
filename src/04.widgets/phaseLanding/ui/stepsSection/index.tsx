@@ -63,10 +63,10 @@ export const StepsSection = () => {
       <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1fr_1.1fr]">
         {/* Left — heading */}
         <div className="relative">
-          <h2 className="font-black uppercase leading-[0.92] tracking-tight text-[clamp(2.5rem,8vw,7rem)]">
+          <h2 className="text-center font-black uppercase leading-[0.92] tracking-tight text-[16vw] sm:text-left sm:text-[clamp(2.5rem,8vw,7rem)]">
             Three steps to drops
           </h2>
-          <span className="absolute bottom-[29%] left-[27%] isolate inline-block -rotate-2 px-3 py-0.5 text-sm font-medium text-white">
+          <span className="absolute left-[55%] top-[20%] -translate-x-1/2 isolate inline-block -rotate-2 px-3 py-0.5 text-sm font-medium text-white sm:bottom-[29%] sm:left-[27%] sm:top-auto sm:translate-x-0">
             <img
               src={asset("simple-line.svg")}
               alt=""
@@ -182,7 +182,7 @@ export const StepsSection = () => {
             </div>
           </div>
 
-          <div className="w-full max-w-sm shrink-0 pt-4 text-center lg:w-36 lg:pt-8 lg:text-left">
+          <div className="w-full max-w-[290px] shrink-0 pt-4 text-center lg:w-36 lg:max-w-none lg:pt-8 lg:text-left">
             <p className="text-lg font-bold">Create, add, share.</p>
             <p className="mt-2 text-sm leading-relaxed text-white/70">
               Everything you need to start receiving gifts without the friction
