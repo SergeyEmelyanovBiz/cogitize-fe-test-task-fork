@@ -36,9 +36,9 @@ const DURATION = 5;
 
 // Vertical placement of the two stickers per step.
 const STICKER_POS = [
-  { left: "top-[30%]", right: "top-[52%]" },
-  { left: "top-[30%]", right: "top-[52%]" },
-  { left: "top-[24%]", right: "top-[58%]" },
+  { left: "top-[19%] sm:top-[30%]", right: "top-[31%] sm:top-[52%]" },
+  { left: "top-[19%] sm:top-[30%]", right: "top-[31%] sm:top-[52%]" },
+  { left: "top-[24%]", right: "top-[31%] sm:top-[58%]" },
 ] as const;
 
 // A distinct entrance for the sticker on each step.
