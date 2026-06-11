@@ -44,7 +44,7 @@ export const CreatorsSection = () => {
             {...reveal}
             src={asset("photo-duo.png")}
             alt=""
-            className="absolute right-0 top-[26%] z-10 w-40 rounded-md border-[6px] border-white shadow-xl sm:w-52"
+            className="absolute right-0 top-[24%] z-10 w-52 shadow-xl sm:w-64"
           />
           <motion.img
             {...reveal}
@@ -58,26 +58,30 @@ export const CreatorsSection = () => {
             {...reveal}
             src={asset("heart.svg")}
             alt=""
-            className="absolute bottom-[8%] right-[24%] z-10 w-7"
+            className="absolute bottom-[4%] right-[14%] z-10 w-8"
           />
         </div>
 
-        {/* Fairy photo with yellow smiley + "Action not just words" */}
-        <motion.div {...reveal} className="relative mt-10 w-44 sm:w-52">
-          <img
-            src={asset("photo-fairy.png")}
-            alt=""
-            className="w-full rounded-md border-[6px] border-white shadow-xl"
-          />
+        {/* Fairy polaroid card with yellow smiley + "Action not just words" */}
+        <motion.div {...reveal} className="relative mt-12 w-52 -rotate-2 sm:w-60">
+          <div className="bg-white p-2 shadow-xl">
+            <img
+              src={asset("photo-fairy.png")}
+              alt=""
+              className="w-full"
+            />
+            <div className="relative h-16">
+              <img
+                src={asset("action-words.svg")}
+                alt="Action not just words"
+                className="absolute left-1 top-2 w-40"
+              />
+            </div>
+          </div>
           <img
             src={asset("smiley-yellow.svg")}
             alt=""
             className="absolute -right-4 -top-4 w-12"
-          />
-          <img
-            src={asset("action-words.svg")}
-            alt="Action not just words"
-            className="absolute -bottom-8 left-1 w-36"
           />
         </motion.div>
       </div>
@@ -120,7 +124,7 @@ export const CreatorsSection = () => {
                 />
                 Zero algorithm noise.
               </span>
-              <p className="mt-4 text-base font-medium leading-relaxed">
+              <p className="mt-4 text-base font-medium leading-relaxed text-[#FEFEFE]">
                 Only your raw concepts, your curated drops, and the community
                 that stands by your side
               </p>
