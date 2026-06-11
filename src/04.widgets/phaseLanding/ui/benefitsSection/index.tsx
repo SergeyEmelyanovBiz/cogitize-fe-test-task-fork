@@ -60,7 +60,7 @@ export const BenefitsSection = () => {
           </div>
 
           <div className="relative mx-auto grid max-w-6xl grid-cols-[1fr_auto_1fr] items-center gap-8 px-6 py-9">
-            <p className="max-w-[230px] text-sm leading-snug text-white/70">
+            <p className="max-w-[268px] text-xl font-medium leading-6 text-[#F4F4F4]">
               {b.desc}
             </p>
 
