@@ -66,7 +66,7 @@ export const MobileMenu = ({ open, onClose }: MobileMenuProps) => {
                       src="/images/phase/start-wishing.svg"
                       alt=""
                       aria-hidden
-                      className="pointer-events-none absolute right-6 top-7 w-32 select-none -rotate-3"
+                      className="pointer-events-none absolute right-4 top-8 w-36 select-none -rotate-3"
                     />
                   )}
                 </a>
