@@ -60,7 +60,7 @@ export const BenefitsSection = () => {
               className="absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(to right, #181818 0%, transparent 49%, transparent 51%, #181818 100%)",
+                  "linear-gradient(to bottom, #181818 0%, transparent 52%)",
               }}
             />
           </div>
