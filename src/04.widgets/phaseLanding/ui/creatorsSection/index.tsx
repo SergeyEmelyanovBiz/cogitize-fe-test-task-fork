@@ -39,19 +39,22 @@ export const CreatorsSection = () => {
             className="absolute -top-3 left-[16%] z-10 w-40 -rotate-6 sm:w-48"
           />
 
-          {/* Duo photo + "Just you and your audience" */}
-          <motion.img
+          {/* Duo photo with "Just you and your audience" over its bottom-right */}
+          <motion.div
             {...reveal}
-            src={asset("photo-duo.png")}
-            alt=""
-            className="absolute right-0 top-[24%] z-10 w-52 shadow-xl sm:w-64"
-          />
-          <motion.img
-            {...reveal}
-            src={asset("just-you-audience.svg")}
-            alt="Just you and your audience"
-            className="absolute right-2 top-[58%] z-10 w-36 sm:w-44"
-          />
+            className="absolute right-[-5%] top-[30%] z-10 w-52 sm:w-64"
+          >
+            <img
+              src={asset("photo-duo.png")}
+              alt=""
+              className="w-full shadow-xl"
+            />
+            <img
+              src={asset("just-you-audience.svg")}
+              alt="Just you and your audience"
+              className="absolute -bottom-12 right-0 w-40 sm:w-48"
+            />
+          </motion.div>
 
           {/* Purple heart */}
           <motion.img
