@@ -26,7 +26,7 @@ export const CreatorsSection = () => {
         <div className="relative mt-8">
           <motion.h2
             {...reveal}
-            className="relative z-10 text-center font-black uppercase leading-[0.9] tracking-tight text-[#050505] text-[clamp(2.5rem,10vw,8.5rem)]"
+            className="relative z-10 text-center font-black uppercase leading-[0.9] tracking-tight text-[#050505] text-[15vw] sm:text-[clamp(2.5rem,10vw,8.5rem)]"
           >
             Phase is a space for creators to be seen
           </motion.h2>
@@ -109,7 +109,7 @@ export const CreatorsSection = () => {
               {...reveal}
               className="absolute bottom-10 left-4 z-10 max-w-xs text-[#181818] sm:left-20"
             >
-              <span className="relative isolate inline-block px-2 py-0.5 text-2xl font-bold">
+              <span className="relative isolate inline-block px-2 py-0.5 text-base font-medium">
                 <img
                   src={asset("underline-1.svg")}
                   alt=""
@@ -118,7 +118,7 @@ export const CreatorsSection = () => {
                 Just you and your tribe
               </span>
               <br />
-              <span className="relative isolate mt-2 inline-block px-2 py-0.5 text-2xl font-bold">
+              <span className="relative isolate mt-2 inline-block px-2 py-0.5 text-base font-medium">
                 <img
                   src={asset("underline-2.svg")}
                   alt=""
@@ -126,7 +126,7 @@ export const CreatorsSection = () => {
                 />
                 Zero algorithm noise.
               </span>
-              <p className="mt-4 text-base font-medium leading-relaxed text-[#FEFEFE]">
+              <p className="mt-4 text-xl font-medium leading-6 text-[#FEFEFE]">
                 Only your raw concepts, your curated drops, and the community
                 that stands by your side
               </p>
