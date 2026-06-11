@@ -62,7 +62,7 @@ export const CreatorsSection = () => {
             {...reveal}
             src={asset("heart.svg")}
             alt=""
-            className="absolute bottom-[4%] right-[14%] z-20 w-8"
+            className="absolute bottom-[4%] right-[22%] z-20 w-8 sm:right-[14%]"
           />
         </div>
       </div>
