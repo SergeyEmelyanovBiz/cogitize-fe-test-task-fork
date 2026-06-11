@@ -67,14 +67,6 @@ export const CreatorsSection = () => {
 
       {/* Dark "tribe" block — two portraits, with the curved gray divider */}
       <div className="relative">
-        {/* curved gray bottom of the section dipping into the photos */}
-        <img
-          src={asset("section2-curve.svg")}
-          alt=""
-          aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-0 z-10 w-full -translate-y-[88%] select-none"
-        />
-
         {/* Fairy polaroid overlapping the boundary into the dark block */}
         <motion.div
           {...reveal}
@@ -97,10 +89,19 @@ export const CreatorsSection = () => {
           />
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2">
-          <div className="relative min-h-[460px]">
-            <img
-              src={asset("photo-smoke.png")}
+        {/* photos + curved gray divider anchored to their top */}
+        <div className="relative">
+          <img
+            src={asset("section2-curve.svg")}
+            alt=""
+            aria-hidden
+            className="pointer-events-none absolute inset-x-0 top-0 z-10 w-full -translate-y-[88%] select-none"
+          />
+
+          <div className="grid grid-cols-2">
+            <div className="relative min-h-[460px]">
+              <img
+                src={asset("photo-smoke.png")}
               alt=""
               className="absolute inset-0 h-full w-full object-cover object-[center_70%]"
             />
@@ -132,12 +133,13 @@ export const CreatorsSection = () => {
             </motion.div>
           </div>
 
-          <div className="relative min-h-[460px]">
-            <img
-              src={asset("photo-orange.png")}
-              alt=""
-              className="absolute inset-0 h-full w-full object-cover"
-            />
+            <div className="relative min-h-[460px]">
+              <img
+                src={asset("photo-orange.png")}
+                alt=""
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </div>
