@@ -74,13 +74,20 @@ export const MobileMenu = ({ open, onClose }: MobileMenuProps) => {
           <div className="mt-auto flex flex-col gap-3">
             <button
               type="button"
-              className="flex items-center justify-center gap-2 rounded-xl bg-[#FFD000] py-3.5 text-sm font-semibold text-[#181818]"
+              className="flex h-[42px] items-center justify-center gap-2 rounded-xl bg-[#FFD000] text-sm font-semibold text-[#181818]"
             >
-              ↳ Create you Phase
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/phase/arrow-reply.svg"
+                alt=""
+                aria-hidden
+                className="size-5"
+              />
+              Create you Phase
             </button>
             <button
               type="button"
-              className="rounded-xl border border-[#181818] py-3.5 text-sm font-semibold text-[#181818]"
+              className="h-[42px] rounded-xl border border-[#181818] text-sm font-semibold text-[#181818]"
             >
               Log in
             </button>

@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CornerDownRight } from "lucide-react";
 import { Marquee } from "../marquee";
 
 export const HeroSection = () => {
@@ -72,7 +71,13 @@ export const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.45, duration: 0.5 }}
         >
-          <CornerDownRight className="size-5" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/phase/arrow-reply.svg"
+            alt=""
+            aria-hidden
+            className="size-5"
+          />
           Create you Phase
         </motion.button>
       </div>
