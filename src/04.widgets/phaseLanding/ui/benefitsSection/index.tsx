@@ -49,7 +49,6 @@ export const BenefitsSection = () => {
           transition={{ duration: 0.4, delay: i * 0.05 }}
           className="group relative border-t border-white/10 last:border-b"
         >
-          {/* background photo + gradient — always on, fades in on hover (desktop) */}
           <div className="pointer-events-none absolute inset-0 opacity-100 transition-opacity duration-500 sm:opacity-0 sm:group-hover:opacity-100">
             <img
               src={asset(b.photo)}
@@ -65,7 +64,6 @@ export const BenefitsSection = () => {
                   "linear-gradient(to bottom, #181818 0%, transparent 170%)",
               }}
             />
-            {/* extra veil for text readability over the always-on photo (mobile) */}
             <div className="absolute inset-0 bg-black/40 sm:hidden" />
           </div>
 

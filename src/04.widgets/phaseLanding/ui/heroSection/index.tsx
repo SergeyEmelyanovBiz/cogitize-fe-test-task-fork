@@ -11,7 +11,6 @@ export const HeroSection = () => {
     >
       <div className="flex flex-1 flex-col items-center justify-center px-6 pt-28 pb-10">
         <div className="relative w-full max-w-6xl">
-          {/* purple hand-drawn smiley (from Figma) */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <motion.img
             src="/images/phase/smiley.svg"
@@ -23,7 +22,6 @@ export const HeroSection = () => {
             transition={{ delay: 0.5, type: "spring", stiffness: 260 }}
           />
 
-          {/* "Independent minds only" badge on a brush stroke (from Figma) */}
           <motion.span
             className="absolute -top-9 right-2 z-10 inline-flex items-center justify-center px-6 py-1.5 sm:right-10"
             initial={{ opacity: 0, y: -10, scale: 0.8 }}

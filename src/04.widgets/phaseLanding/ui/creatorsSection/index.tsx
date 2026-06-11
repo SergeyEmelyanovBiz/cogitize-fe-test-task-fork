@@ -14,7 +14,6 @@ const reveal = {
 export const CreatorsSection = () => {
   return (
     <section id="how-it-works" className="relative overflow-hidden bg-[#EFEEED]">
-      {/* Editorial heading block */}
       <div className="relative z-20 mx-auto max-w-6xl px-6 pt-[100px] pb-2">
         <motion.p
           {...reveal}
@@ -33,7 +32,6 @@ export const CreatorsSection = () => {
             seen
           </motion.h2>
 
-          {/* "Our mission" purple script */}
           <motion.img
             {...reveal}
             src={asset("our-mission.svg")}
@@ -41,8 +39,6 @@ export const CreatorsSection = () => {
             className="absolute -top-6 left-2 z-20 w-36 -rotate-6 sm:left-[22%] sm:w-48"
           />
 
-          {/* Duo polaroid with "Just you and your audience" over its bottom-right
-              — hidden on mobile (not present in the mobile layout) */}
           <motion.div
             {...reveal}
             className="absolute right-[-4%] top-[10%] z-0 hidden w-52 sm:block sm:w-64"
@@ -57,7 +53,6 @@ export const CreatorsSection = () => {
             />
           </motion.div>
 
-          {/* Purple heart */}
           <motion.img
             {...reveal}
             src={asset("heart.svg")}
@@ -67,9 +62,7 @@ export const CreatorsSection = () => {
         </div>
       </div>
 
-      {/* Dark "tribe" block — two portraits, with the curved gray divider */}
       <div className="relative">
-        {/* Fairy polaroid overlapping the boundary into the dark block */}
         <motion.div
           {...reveal}
           className="relative z-30 mx-auto -mb-20 mt-8 w-52 -rotate-2 sm:absolute sm:left-[95px] sm:-top-24 sm:mx-0 sm:mb-0 sm:mt-0 sm:w-60"
@@ -91,7 +84,6 @@ export const CreatorsSection = () => {
           />
         </motion.div>
 
-        {/* photos + curved gray divider anchored to their top */}
         <div className="relative">
           <img
             src={asset("section2-curve.svg")}

@@ -11,7 +11,6 @@ type MobileMenuProps = {
 };
 
 export const MobileMenu = ({ open, onClose }: MobileMenuProps) => {
-  // lock the page scroll while the menu is open, restore it on close
   useEffect(() => {
     if (!open) return;
     const previous = document.body.style.overflow;

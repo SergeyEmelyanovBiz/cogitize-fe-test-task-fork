@@ -34,20 +34,15 @@ const STEPS = [
 
 const DURATION = 5;
 
-// Vertical placement of the two stickers per step.
 const STICKER_POS = [
   { left: "top-[19%] sm:top-[30%]", right: "top-[31%] sm:top-[52%]" },
   { left: "top-[19%] sm:top-[30%]", right: "top-[31%] sm:top-[52%]" },
   { left: "top-[24%]", right: "top-[31%] sm:top-[58%]" },
 ] as const;
 
-// A distinct entrance for the sticker on each step.
 const STICKER_IN = [
-  // START — pop
   { initial: { scale: 0, opacity: 0 }, transition: { type: "spring", stiffness: 300, damping: 13 } },
-  // ADD — drop from above
   { initial: { y: -70, opacity: 0 }, transition: { type: "spring", stiffness: 240, damping: 15 } },
-  // SHARE — spin in
   { initial: { rotate: 110, scale: 0.4, opacity: 0 }, transition: { duration: 0.6, ease: "backOut" } },
 ] as const;
 
@@ -61,7 +56,6 @@ export const StepsSection = () => {
       className="overflow-hidden bg-[#181818] px-6 py-28 text-white"
     >
       <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1fr_1.1fr]">
-        {/* Left — heading */}
         <div className="relative">
           <h2 className="text-center font-black uppercase leading-[0.92] tracking-tight text-[16vw] sm:text-left sm:text-[clamp(2.5rem,8vw,7rem)]">
             Three steps to drops
@@ -76,17 +70,13 @@ export const StepsSection = () => {
           </span>
         </div>
 
-        {/* Right — stories card + intro */}
         <div className="flex flex-col items-center gap-6 lg:flex-row lg:items-start lg:justify-center">
           <div className="relative w-full max-w-[335px] sm:max-w-[431px]">
-            {/* white polaroid frame: 5px sides/top, 19px bottom */}
             <div className="bg-white pt-[5px] pr-[5px] pb-[19px] pl-[5px] shadow-2xl">
-              {/* yellow/purple card — clips decal + content (not the stickers) */}
               <div
                 className="relative aspect-[325/421] overflow-hidden sm:aspect-[421/610]"
                 style={{ backgroundColor: active.base }}
               >
-                {/* all decals preloaded; active one shown instantly via opacity */}
                 {STEPS.map((s, i) => (
                   <img
                     key={s.decal}
@@ -98,7 +88,6 @@ export const StepsSection = () => {
                   />
                 ))}
 
-                {/* progress bars */}
                 <div className="absolute inset-x-5 top-5 z-30 flex gap-1.5">
                   {STEPS.map((_, i) => (
                     <div
@@ -154,7 +143,6 @@ export const StepsSection = () => {
               </div>
             </div>
 
-            {/* stickers — outside the clipped card; a different entrance per step */}
             <motion.img
               key={`sticker-l-${step}`}
               src={asset(active.sticker)}
@@ -174,7 +162,6 @@ export const StepsSection = () => {
               className={`absolute -right-10 ${STICKER_POS[step].right} z-20 w-28 sm:w-36`}
             />
 
-            {/* preload stickers to avoid a flash on slide change */}
             <div className="pointer-events-none absolute h-0 w-0 overflow-hidden opacity-0">
               {STEPS.map((s) => (
                 <img key={s.sticker} src={asset(s.sticker)} alt="" />
