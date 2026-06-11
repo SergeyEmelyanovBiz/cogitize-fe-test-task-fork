@@ -78,7 +78,7 @@ export const StepsSection = () => {
 
         {/* Right — stories card + intro */}
         <div className="flex flex-col items-center gap-6 lg:flex-row lg:items-start lg:justify-center">
-          <div className="relative w-full max-w-[431px]">
+          <div className="relative w-full max-w-[335px] sm:max-w-[431px]">
             {/* white polaroid frame: 5px sides/top, 19px bottom */}
             <div className="bg-white pt-[5px] pr-[5px] pb-[19px] pl-[5px] shadow-2xl">
               {/* yellow/purple card — clips decal + content (not the stickers) */}
