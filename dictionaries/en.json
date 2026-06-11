@@ -3,7 +3,8 @@
     "swap": "Swap",
     "design": "Design",
     "guide": "Guide",
-    "replay": "Replay"
+    "replay": "Replay",
+    "hide": "Hide"
   },
   "swap": {
     "convert": "Convert",
