@@ -9,7 +9,7 @@ export default defineConfig([
         extends: [...nextCoreWebVitals, ...nextTypescript],
 
         rules: {
-            "@typescript-eslint/no-explicit-any": "off",
+            "@typescript-eslint/no-explicit-any": "error",
             "@next/next/no-img-element": "off",
 
             "import/no-internal-modules": ["error", {

@@ -16,7 +16,8 @@
     "swap": "Поміняти місцями",
     "confirm": "Підтвердити",
     "ok": "ОК",
-    "successMessage": "Ви успішно обміняли {give} → {receive}"
+    "successMessage": "Ви успішно обміняли {give} → {receive}",
+    "error": "Не вдалося отримати курс. Спробуйте ще раз."
   },
   "design": {
     "badge": "Framer Motion",

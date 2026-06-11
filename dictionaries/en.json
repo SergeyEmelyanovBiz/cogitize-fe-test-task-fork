@@ -16,7 +16,8 @@
     "swap": "Swap",
     "confirm": "Confirm",
     "ok": "OK",
-    "successMessage": "You successfully swapped {give} → {receive}"
+    "successMessage": "You successfully swapped {give} → {receive}",
+    "error": "Couldn’t fetch the rate. Please try again."
   },
   "design": {
     "badge": "Framer Motion",

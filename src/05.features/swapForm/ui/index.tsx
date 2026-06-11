@@ -19,6 +19,7 @@ export const SwapForm = () => {
     fromValue,
     toValue,
     canConfirm,
+    isError,
     handleFromChange,
     handleToChange,
     selectFromAsset,
@@ -73,6 +74,15 @@ export const SwapForm = () => {
           onValueChange={handleToChange}
         />
       </div>
+
+      {isError && (
+        <p
+          role="alert"
+          className="mt-4 text-center text-sm text-[#ff6b6b]"
+        >
+          {t("error")}
+        </p>
+      )}
 
       <Button
         onClick={() => setModalOpen(true)}
