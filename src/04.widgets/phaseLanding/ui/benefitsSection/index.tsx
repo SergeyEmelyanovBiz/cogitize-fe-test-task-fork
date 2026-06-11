@@ -45,12 +45,12 @@ export const BenefitsSection = () => {
           key={b.name}
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.4, delay: i * 0.05 }}
           className="group relative border-t border-white/10 last:border-b"
         >
-          {/* background photo + gradient, revealed on hover */}
-          <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+          {/* background photo + gradient — always on, fades in on hover (desktop) */}
+          <div className="pointer-events-none absolute inset-0 opacity-100 transition-opacity duration-500 sm:opacity-0 sm:group-hover:opacity-100">
             <img
               src={asset(b.photo)}
               alt=""
@@ -65,24 +65,26 @@ export const BenefitsSection = () => {
                   "linear-gradient(to bottom, #181818 0%, transparent 170%)",
               }}
             />
+            {/* extra veil for text readability over the always-on photo (mobile) */}
+            <div className="absolute inset-0 bg-black/40 sm:hidden" />
           </div>
 
-          <div className="relative mx-auto grid max-w-6xl grid-cols-[1fr_auto_1fr] items-center gap-8 px-6 py-9">
-            <p className="max-w-[268px] text-xl font-medium leading-6 text-[#F4F4F4]">
-              {b.desc}
-            </p>
-
-            <h3 className="text-center text-5xl font-bold tracking-tight transition-colors duration-300 group-hover:text-[#FFD000] sm:text-6xl">
+          <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-3 px-6 py-12 text-center sm:grid sm:grid-cols-[1fr_auto_1fr] sm:items-center sm:gap-8 sm:py-9 sm:text-left">
+            <h3 className="order-1 text-4xl font-bold tracking-tight transition-colors duration-300 group-hover:text-[#FFD000] sm:order-2 sm:text-center sm:text-5xl lg:text-6xl">
               {b.name}
             </h3>
 
-            <div className="flex justify-end">
-              <span className="relative isolate inline-block px-3 py-1 text-sm font-medium text-white/50 transition-colors duration-300 group-hover:text-white">
-                <span className="absolute inset-0 -z-10 bg-white/10 transition-opacity duration-300 group-hover:opacity-0" />
+            <p className="order-2 max-w-[268px] text-base font-medium leading-snug text-[#F4F4F4] sm:order-1 sm:text-xl sm:leading-6">
+              {b.desc}
+            </p>
+
+            <div className="order-3 flex justify-center sm:order-3 sm:justify-end">
+              <span className="relative isolate inline-block px-3 py-1 text-sm font-medium text-white transition-colors duration-300 sm:text-white/50 sm:group-hover:text-white">
+                <span className="absolute inset-0 -z-10 bg-white/10 opacity-0 transition-opacity duration-300 sm:opacity-100 sm:group-hover:opacity-0" />
                 <img
                   src={asset("benefit-tag-line.svg")}
                   alt=""
-                  className="absolute inset-0 -z-10 h-full w-full opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  className="absolute inset-0 -z-10 h-full w-full opacity-100 transition-opacity duration-300 sm:opacity-0 sm:group-hover:opacity-100"
                 />
                 {b.tag}
               </span>

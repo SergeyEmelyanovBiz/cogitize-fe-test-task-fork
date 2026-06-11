@@ -36,13 +36,14 @@ export const CreatorsSection = () => {
             {...reveal}
             src={asset("our-mission.svg")}
             alt="Our mission"
-            className="absolute -top-6 left-[22%] z-20 w-40 -rotate-6 sm:w-48"
+            className="absolute -top-6 left-2 z-20 w-36 -rotate-6 sm:left-[22%] sm:w-48"
           />
 
-          {/* Duo polaroid with "Just you and your audience" over its bottom-right */}
+          {/* Duo polaroid with "Just you and your audience" over its bottom-right
+              — hidden on mobile (not present in the mobile layout) */}
           <motion.div
             {...reveal}
-            className="absolute right-[-4%] top-[10%] z-0 w-52 sm:w-64"
+            className="absolute right-[-4%] top-[10%] z-0 hidden w-52 sm:block sm:w-64"
           >
             <div className="bg-white pb-6 shadow-xl">
               <img src={asset("photo-duo.png")} alt="" className="w-full" />
@@ -77,7 +78,7 @@ export const CreatorsSection = () => {
         {/* Fairy polaroid overlapping the boundary into the dark block */}
         <motion.div
           {...reveal}
-          className="absolute left-[95px] -top-24 z-30 w-52 -rotate-2 sm:w-60"
+          className="absolute left-1/2 -top-24 z-30 w-52 -translate-x-1/2 -rotate-2 sm:left-[95px] sm:w-60 sm:translate-x-0"
         >
           <div className="bg-white p-2 shadow-xl">
             <img src={asset("photo-fairy.png")} alt="" className="w-full" />
@@ -105,7 +106,7 @@ export const CreatorsSection = () => {
             />
             <motion.div
               {...reveal}
-              className="absolute bottom-10 left-20 z-10 max-w-xs text-[#181818]"
+              className="absolute bottom-10 left-4 z-10 max-w-xs text-[#181818] sm:left-20"
             >
               <span className="relative isolate inline-block px-2 py-0.5 text-2xl font-bold">
                 <img

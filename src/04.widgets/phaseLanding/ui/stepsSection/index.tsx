@@ -77,7 +77,7 @@ export const StepsSection = () => {
         </div>
 
         {/* Right — stories card + intro */}
-        <div className="flex items-start justify-center gap-6">
+        <div className="flex flex-col items-center gap-6 lg:flex-row lg:items-start lg:justify-center">
           <div className="relative w-full max-w-[431px]">
             {/* white polaroid frame: 5px sides/top, 19px bottom */}
             <div className="bg-white pt-[5px] pr-[5px] pb-[19px] pl-[5px] shadow-2xl">
@@ -180,7 +180,7 @@ export const StepsSection = () => {
             </div>
           </div>
 
-          <div className="hidden w-36 shrink-0 pt-8 lg:block">
+          <div className="w-full max-w-sm shrink-0 pt-4 text-center lg:w-36 lg:pt-8 lg:text-left">
             <p className="text-lg font-bold">Create, add, share.</p>
             <p className="mt-2 text-sm leading-relaxed text-white/70">
               Everything you need to start receiving gifts without the friction
