@@ -66,7 +66,7 @@ export const StepsSection = () => {
           <h2 className="text-center font-black uppercase leading-[0.92] tracking-tight text-[16vw] sm:text-left sm:text-[clamp(2.5rem,8vw,7rem)]">
             Three steps to drops
           </h2>
-          <span className="absolute left-[55%] top-[20%] -translate-x-1/2 isolate inline-block -rotate-2 px-3 py-0.5 text-sm font-medium text-white sm:bottom-[29%] sm:left-[27%] sm:top-auto sm:translate-x-0">
+          <span className="absolute left-[55%] top-[29%] -translate-x-1/2 isolate inline-block -rotate-2 px-3 py-0.5 text-sm font-medium text-white sm:bottom-[29%] sm:left-[27%] sm:top-auto sm:translate-x-0">
             <img
               src={asset("simple-line.svg")}
               alt=""
