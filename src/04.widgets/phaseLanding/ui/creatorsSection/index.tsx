@@ -77,7 +77,7 @@ export const CreatorsSection = () => {
         {/* Fairy polaroid overlapping the boundary into the dark block */}
         <motion.div
           {...reveal}
-          className="absolute left-[82px] -top-40 z-30 w-52 -rotate-2 sm:w-60"
+          className="absolute left-[95px] -top-24 z-30 w-52 -rotate-2 sm:w-60"
         >
           <div className="bg-white p-2 shadow-xl">
             <img src={asset("photo-fairy.png")} alt="" className="w-full" />
