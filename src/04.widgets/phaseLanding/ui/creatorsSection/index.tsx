@@ -28,7 +28,9 @@ export const CreatorsSection = () => {
             {...reveal}
             className="relative z-10 text-center font-black uppercase leading-[0.9] tracking-tight text-[#050505] text-[15vw] sm:text-[clamp(2.5rem,10vw,8.5rem)]"
           >
-            Phase is a space for creators to be seen
+            Phase is a space for creators to be{" "}
+            <br className="sm:hidden" />
+            seen
           </motion.h2>
 
           {/* "Our mission" purple script */}
