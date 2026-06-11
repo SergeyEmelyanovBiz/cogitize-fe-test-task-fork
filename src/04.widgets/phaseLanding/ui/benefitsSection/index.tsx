@@ -56,7 +56,13 @@ export const BenefitsSection = () => {
               alt=""
               className="absolute inset-0 h-full w-full object-cover"
             />
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#181818_0%,transparent_49%)]" />
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(to right, #181818 0%, transparent 49%, transparent 51%, #181818 100%)",
+              }}
+            />
           </div>
 
           <div className="relative mx-auto grid max-w-6xl grid-cols-[1fr_auto_1fr] items-center gap-8 px-6 py-9">
